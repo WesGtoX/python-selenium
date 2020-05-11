@@ -1,4 +1,4 @@
-# O que é Selenium
+# Aula 2 - O que é Selenium
 
 Biblioteca de software livre sob licença Apache 2.0 que te ajuda a resolver trabalhos manuais e repetitivos usando o browser.  
 
