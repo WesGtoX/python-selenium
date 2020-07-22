@@ -5,15 +5,18 @@
 </h1>
 
 <p align="center">
+  <a href="#about-the-project">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#technology">Technology</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#getting-started">Getting Started</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#roadmap">Roadmap</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#how-to-contribute">Contributing</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#license">License</a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/languages/top/wesgtox/python-selenium?style=plastic" alt="GitHub top language" />
-  <img src="https://img.shields.io/github/license/wesgtox/python-selenium?style=plastic" alt="License" />
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/wesgtox/python-selenium?style=plastic" />
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/wesgtox/python-selenium?style=plastic" />
+  <img alt="License" src="https://img.shields.io/github/license/wesgtox/python-selenium?style=plastic" />
 </p>
 
 # Python Selenium Course
@@ -23,12 +26,46 @@ Course by [Eduardo Mendes](https://github.com/dunossauro)
 YouTube Channel: [dunossauro](https://www.youtube.com/playlist?list=PLOQgLBuj2-3LqnMYKZZgzeC7CKCPF375B)  
 
 
+## About the Project
+
+...
+
+
 ## Technology 
 
 This project was developed with the following technologies:
 
 - [Python](https://www.python.org/)
 - [Selenium](https://selenium-python.readthedocs.io/)
+
+
+## Getting Started
+
+### Prerequisites
+
+- [Python](https://www.python.org/)
+- [Geckodriver](https://github.com/mozilla/geckodriver/releases)
+- [Mozilla Firefox](https://www.mozilla.org/pt-BR/firefox/new/)
+- [Google Chrome](https://www.google.com/intl/pt-BR/chrome/)
+
+
+### Install and Run
+
+1. Clone the repository:
+```bash
+git clone https://github.com/WesGtoX/python-selenium.git
+```
+2. Install [Geckodriver](https://github.com/mozilla/geckodriver/releases) from GitHub.
+3. Create and activate a virtual enviroment:
+```bash
+python -m venv venv
+source venv/bin/activate
+```
+4. Install the dependencies:
+```bash
+pip install selenium
+pip install ipython
+```
 
 
 ## Roadmap
@@ -55,4 +92,4 @@ Distributed under the MIT License. See [LICENSE](LICENSE.md) for more informatio
 
 ---
 
-Made with ♥ by [Wesley Mendes](https://wesleymends.com.br/) :wave:
+Made with ♥ by [Wesley Mendes](https://wesleymendes.com.br/) :wave:

@@ -1,5 +1,7 @@
 # Aula 2 - O que é Selenium
 
+- [**SLIDE**](https://raw.githubusercontent.com/dunossauro/curso-python-selenium/master/slides/Aula%20%2302.pdf)
+
 Biblioteca de software livre sob licença Apache 2.0 que te ajuda a resolver trabalhos manuais e repetitivos usando o browser.  
 
 - Biblioteca: conjunto de ferramentas, feitas com código.  
