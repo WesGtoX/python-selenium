@@ -5,7 +5,6 @@
     achar a url do exercício 3 e ir até lá.e
 """
 from selenium.webdriver import Firefox
-from urllib.parse import urlparse
 from time import sleep
 from pprint import pprint
 
@@ -30,6 +29,7 @@ def get_links(browser, element):  # dict
         result[anchor.text] = anchor.get_attribute('href')
 
     return result
+
 
 """
 Parte 1

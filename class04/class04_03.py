@@ -16,6 +16,7 @@ def find_by_text(browser, tag, text):
         if element.text == text:
             return element
 
+
 browser = Firefox()
 
 browser.get('https://selenium.dunossauro.live/aula_04_b.html')

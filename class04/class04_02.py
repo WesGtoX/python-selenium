@@ -29,6 +29,7 @@ def find_by_href(browser, link):
         if link in element.get_attribute('href'):
             return element
 
+
 browser = Firefox()
 
 browser.get('https://selenium.dunossauro.live/aula_04_a.html')

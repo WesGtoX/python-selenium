@@ -12,10 +12,15 @@ def close_broser(browser):
 
 
 def fill_form(browser, form, nome, senha):
-    browser.find_element_by_css_selector(f'.form-{form} input[name="nome"]').send_keys(nome)
-    browser.find_element_by_css_selector(f'.form-{form} input[name="senha"]').send_keys(senha)
+    browser.find_element_by_css_selector(
+        f'.form-{form} input[name="nome"]').send_keys(nome)
+
+    browser.find_element_by_css_selector(
+        f'.form-{form} input[name="senha"]').send_keys(senha)
+
     sleep(1)
-    browser.find_element_by_css_selector(f'.form-{form} input[name="{form}"]').click()
+    browser.find_element_by_css_selector(
+        f'.form-{form} input[name="{form}"]').click()
 
 
 def get_header_text(browser):
@@ -54,8 +59,8 @@ if __name__ == "__main__":
         passwd = getpass.getpass(prompt='Digite a sua senha: ')
 
     data = {
-        'nome': name, 
-        'senha': passwd, 
+        'nome': name,
+        'senha': passwd,
     }
 
     print(get_it_done(browser, url, data))

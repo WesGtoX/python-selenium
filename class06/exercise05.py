@@ -1,4 +1,4 @@
-import getpass 
+import getpass
 from selenium.webdriver import Firefox
 from time import sleep
 
@@ -12,10 +12,16 @@ def close_broser(browser):
 
 
 def fill_form(browser, form, nome, senha):
-    browser.find_element_by_css_selector(f'.form-{form} input[name="nome"]').send_keys(nome)
-    browser.find_element_by_css_selector(f'.form-{form} input[name="senha"]').send_keys(senha)
+    browser.find_element_by_css_selector(
+        f'.form-{form} input[name="nome"]').send_keys(nome)
+
+    browser.find_element_by_css_selector(
+        f'.form-{form} input[name="senha"]').send_keys(senha)
+
     sleep(1)
-    browser.find_element_by_css_selector(f'.form-{form} input[name="{form}"]').click()
+
+    browser.find_element_by_css_selector(
+        f'.form-{form} input[name="{form}"]').click()
 
 
 def get_header_text(browser):
@@ -23,12 +29,14 @@ def get_header_text(browser):
 
 
 def form_iterate(browser, data, i=0):
-    input_form = len(browser.find_elements_by_css_selector('form[class*="form-l"]'))
-    
+    input_form = len(
+        browser.find_elements_by_css_selector('form[class*="form-l"]')
+    )
+
     for i in range(input_form):
         _form = browser.find_element_by_css_selector('p span').text
         fill_form(browser, _form, **data)
-        i+=1
+        i += 1
         sleep(1)
 
 
@@ -57,8 +65,8 @@ if __name__ == "__main__":
         passwd = getpass.getpass(prompt='Digite a sua senha: ')
 
     data = {
-        'nome': name, 
-        'senha': passwd, 
+        'nome': name,
+        'senha': passwd,
     }
 
     print(get_it_done(browser, url, data))

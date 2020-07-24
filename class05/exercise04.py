@@ -12,6 +12,7 @@ firefox.get(url)
 
 sleep(2)
 
+
 def fill_form(browser, nome, email, senha, telefone):
     browser.find_element_by_name('nome').send_keys(nome)
     browser.find_element_by_name('email').send_keys(email)
@@ -19,10 +20,11 @@ def fill_form(browser, nome, email, senha, telefone):
     browser.find_element_by_name('telefone').send_keys(telefone)
     browser.find_element_by_name('btn').click()
 
+
 struct = {
-    'nome': 'Wesley', 
-    'email': 'wesley@wesley.com', 
-    'senha': 'q1w2e3r4', 
+    'nome': 'Wesley',
+    'email': 'wesley@wesley.com',
+    'senha': 'q1w2e3r4',
     'telefone': '991993862'
 }
 

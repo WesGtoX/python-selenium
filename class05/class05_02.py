@@ -12,4 +12,7 @@ topic = firefox.find_element_by_class_name('topico')
 languages = firefox.find_elements_by_class_name('linguagens')
 
 for language in languages:
-    print((language.find_element_by_tag_name('h2').text, language.find_element_by_tag_name('p').text))
+    print((
+        language.find_element_by_tag_name('h2').text,
+        language.find_element_by_tag_name('p').text)
+    )

@@ -1,7 +1,9 @@
 from selenium.webdriver import Firefox
+
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+
 from urllib.parse import urlparse
 from time import sleep
 
@@ -9,7 +11,9 @@ from time import sleep
 def get_page(url, tag='main'):
     browser.get(url)
 
-    WebDriverWait(browser, 120).until(EC.presence_of_element_located((By.TAG_NAME, tag)))
+    WebDriverWait(browser, 120).until(
+        EC.presence_of_element_located((By.TAG_NAME, tag))
+    )
 
     sleep(1)
 
@@ -34,11 +38,12 @@ def get_links(browser, element):  # dict
 def validate_answer(browser, key, answers, tag='main'):
     get_page(url=answers[key], tag=tag)
     return browser.find_element_by_tag_name('main')
-    
+
 
 def verify_answer(page, tag='main'):
     for key in page.keys():
-        if 'Sou o Diabão do erro' in validate_answer(browser, key, page, tag).text:
+        text = 'Sou o Diabão do erro'
+        if text in validate_answer(browser, key, page, tag).text:
             browser.back()
         else:
             break
