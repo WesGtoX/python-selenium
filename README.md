@@ -63,8 +63,7 @@ source venv/bin/activate
 ```
 4. Install the dependencies:
 ```bash
-pip install selenium
-pip install ipython
+pip install -r requirements.txt
 ```
 
 

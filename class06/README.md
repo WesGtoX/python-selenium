@@ -1,4 +1,4 @@
-# Aula 5 - Procurando e interagindo com elementos Part II
+# Aula 6 - Procurando e interagindo com elementos Part II
 
 - [**SLIDE**](https://raw.githubusercontent.com/dunossauro/curso-python-selenium/master/slides/Aula%20%2306.pdf)
 
