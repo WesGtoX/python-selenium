@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://github.com/WesGtoX/python-selenium">
-    <img src="img/logo.png" alt="Python Selenium Course" title="Python Selenium Course" width="250px">
+    <img src=".github/logo.png" alt="Python Selenium Course" title="Python Selenium Course" width="250px">
   </a>
 </h1>
 
