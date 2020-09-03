@@ -2,25 +2,40 @@ from abc import ABC
 from selenium.webdriver import Firefox
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
+from library import Page, PageElement
+
+"""
+Problemas de OO
+
+- Responsabilidade
+    - PageElement
+        - url
+        - webdriver
+        - find*
+
+Responsabilidades:
+
+1. Selenium
+    - Coisas de selenium
+2. Não temos uma página (PO)
+3. PageElement, é ser elemento
+
+Reflexão - Reflection
+    - Mudar o código em tempo de execução
+
+- Biblioteca (Implementação do POM)
+- PageElements
+    - Concreto (Não é ABC)
+    - Abstrato (Interface) - ABC (Container)
+- Páginas
+    - BasePage
+    - Paǵina
+"""
 
 
-class PageElement(ABC):
+# PageElements
 
-    def __init__(self, webdriver, url=''):
-        self.webdriver = webdriver
-        self.url = url
-
-    def find_element(self, locator):
-        return self.webdriver.find_element(*locator)
-
-    def find_elements(self, locator):
-        return self.webdriver.find_elements(*locator)
-
-    def open(self):
-        self.webdriver.get(self.url)
-
-
-class Todos(PageElement):
+class Todo(PageElement):
     """atribute = locator"""
     name = (By.ID, 'todo-name')
     description = (By.ID, 'todo-desc')
@@ -88,22 +103,31 @@ class Card:
         return f'Card(name="{self.name}", description="{self.description}")'
 
 
-webdriver = Firefox()
+# PageObject
+
+class BasePage(Page):
+    nav_bar = None
+
+
+class PageTodo(BasePage):
+    a_fazer = AFazer()
+    doing = Doing()
+    done = Done()
+    todo = Todo()
+
+
+# CODE
+
+browser = Firefox()
 url = 'https://selenium.dunossauro.live/todo_list.html'
 
-todo_element = Todos(webdriver, url)
+page = PageTodo(browser, url)
 
-todo_element.open()
+page.open()
 
-todo_element.create_todo(
-    name='Dormir',
-    description='Dormir é muito bom'
-)
+page.todo.create_todo('Fazer a aula', 'Selenium aula POM')
 
-a_fazer = AFazer(webdriver)
+todo = Todo(browser)
+todo.create_todo('Criado pelo page element', 'IHAAA')
 
-todos = a_fazer.todos()
-todos[0].do()
-
-doing = Doing(webdriver)
-todos[0].cancel()
+print(page.a_fazer.todos())

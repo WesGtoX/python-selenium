@@ -1,27 +1,10 @@
 from abc import ABC
-from selenium.webdriver import Firefox
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
+from page_objects import PageElement
 
 
-class PageElement(ABC):
-
-    def __init__(self, webdriver, url=''):
-        self.webdriver = webdriver
-        self.url = url
-
-    def find_element(self, locator):
-        return self.webdriver.find_element(*locator)
-
-    def find_elements(self, locator):
-        return self.webdriver.find_elements(*locator)
-
-    def open(self):
-        self.webdriver.get(self.url)
-
-
-class Todos(PageElement):
-    """atribute = locator"""
+class Todo(PageElement):
     name = (By.ID, 'todo-name')
     description = (By.ID, 'todo-desc')
     urgent = (By.ID, 'todo-next')
@@ -37,6 +20,7 @@ class Todos(PageElement):
 
 class CardContainer(PageElement, ABC):
 
+    @property
     def todos(self):
         cards = self.find_elements(self.card)
         return [Card(card) for card in cards]
@@ -86,24 +70,3 @@ class Card:
 
     def __repr__(self):
         return f'Card(name="{self.name}", description="{self.description}")'
-
-
-webdriver = Firefox()
-url = 'https://selenium.dunossauro.live/todo_list.html'
-
-todo_element = Todos(webdriver, url)
-
-todo_element.open()
-
-todo_element.create_todo(
-    name='Dormir',
-    description='Dormir é muito bom'
-)
-
-a_fazer = AFazer(webdriver)
-
-todos = a_fazer.todos()
-todos[0].do()
-
-doing = Doing(webdriver)
-todos[0].cancel()
