@@ -1,0 +1,51 @@
+<testsuite name="todo.Todo List" tests="3" errors="0" failures="0" skipped="0" time="2.943187" timestamp="2020-09-09T01:06:49.654919" hostname="archwes"><testcase classname="todo.Todo List" name="Criar um cartão de todo" status="passed" time="1.063243"><system-out>
+<![CDATA[
+@scenario.begin
+  Cenário: Criar um cartão de todo
+    Dado que eu esteja na página "todo" ... passed in 0.617s
+    Quando criar um todo ... passed in 0.412s
+      """
+          {
+              "nome": "Dormir",
+              "descrição": "é bom"
+          }
+      
+      """
+    Então o todo deve estar na pilha "A fazer" ... passed in 0.035s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="todo.Todo List" name="Criar dois cartões de todo" status="passed" time="0.835333"><system-out>
+<![CDATA[
+@scenario.begin
+  Cenário: Criar dois cartões de todo
+    Dado que eu esteja na página "todo" ... passed in 0.232s
+    Quando criar os seguintes todos ... passed in 0.540s
+      | nome   | descrição   |
+      | Dormir | é bom       |
+      | Comer  | ao meio dia |
+    Então o cartão deve estar na pilha "A fazer" ... passed in 0.064s
+      | nome   | descrição |
+      | Dormir | é bom     |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase><testcase classname="todo.Todo List" name="Criar cartão urgente" status="passed" time="1.04461"><system-out>
+<![CDATA[
+@scenario.begin
+  Cenário: Criar cartão urgente
+    Dado que eu esteja na página "todo" ... passed in 0.233s
+    Quando criar os seguintes todos ... passed in 0.755s
+      | nome   | descrição   | urgente |
+      | dormir | é bom       | não     |
+      | comer  | ao meio dia | sim     |
+    Então o cartão deve estar no topo da pilha "A fazer" ... passed in 0.057s
+      | nome  | descrição   |
+      | comer | ao meio dia |
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>
