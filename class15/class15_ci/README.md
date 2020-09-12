@@ -2,10 +2,6 @@
 
 Vamos usar o [selenium-docker](https://github.com/SeleniumHQ/docker-selenium) que fornece as imagens oficiais do selenium no [docker hub](https://hub.docker.com/u/selenium).
 
-Course by [Eduardo Mendes](https://github.com/dunossauro)  
-
-YouTube Channel: [dunossauro](https://www.youtube.com/playlist?list=PLOQgLBuj2-3LqnMYKZZgzeC7CKCPF375B)  
-
 
 ## Selenium docker
 

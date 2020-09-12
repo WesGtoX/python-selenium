@@ -88,7 +88,7 @@ docker-compose up scale firefox=5
 - Consumo do grid web:
   - Cada container exige ~150MB para ficar em modo de espera
   - Um container conectado consome ~300MB
-  - + xxxMB da abertura da página
+  - \+ xxxMB da abertura da página
 
 - Não é tolerante a falhas
 - Não tem gerenciamento de usuários
@@ -141,4 +141,4 @@ driver = webdriver.Remote(
 
 ## Integração contínua
 
-[GitLab CI](./class_ci/)
+[GitLab CI](https://github.com/WesGtoX/python-selenium/tree/master/class15/class15_ci)
