@@ -1,0 +1,5 @@
+docker network create grid
+docker run -d -p 4444:4444 --net grid --name selenium-hub selenium/hub:3.141.59
+docker run -d --net grid -e HUB_HOST=selenium-hub selenium/node-firefox:3.141.59
+docker run -d --net grid -e HUB_HOST=selenium-hub selenium/node-opera:3.141.59
+docker run -d --net grid -e HUB_HOST=selenium-hub -e NODE_MAX_INSTANCES=5 selenium/node-chrome:3.141.59

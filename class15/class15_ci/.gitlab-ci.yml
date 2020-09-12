@@ -1,0 +1,37 @@
+default:
+  image: python:3.8.3
+
+  before_script:
+    - pip install selenium
+
+stages:
+  - firefox
+  - chrome
+  - opera
+
+firefox:
+  stage: firefox
+  script:
+    - python app/ci.py firefox
+
+  services:
+    - name: selenium/standalone-firefox:3.141.59-20200525
+      alias: firefox
+
+chrome:
+  stage: chrome
+  script:
+    - python app/ci.py chrome
+
+  services:
+    - name: selenium/standalone-chrome:3.141.59-20200525
+      alias: chrome
+
+opera:
+  stage: opera
+  script:
+    - python app/ci.py opera
+
+  services:
+    - name: selenium/standalone-opera:3.141.59-20200525
+      alias: opera

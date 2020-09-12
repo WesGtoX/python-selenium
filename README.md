@@ -28,7 +28,7 @@ YouTube Channel: [dunossauro](https://www.youtube.com/playlist?list=PLOQgLBuj2-3
 
 ## About the Project
 
-...
+Selenium course with Python.
 
 
 ## Technology 
@@ -37,6 +37,8 @@ This project was developed with the following technologies:
 
 - [Python](https://www.python.org/)
 - [Selenium](https://selenium-python.readthedocs.io/)
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
 
 
 ## Getting Started
