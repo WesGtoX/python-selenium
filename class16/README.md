@@ -3,6 +3,7 @@
 - [**SLIDE**](https://raw.githubusercontent.com/dunossauro/curso-python-selenium/master/slides/Aula%20%2316.pdf)
 
 ## Sobre o Splinter
+
 - [Documentação](https://splinter.readthedocs.io/en/latest/)
 - [GitHub](https://github.com/cobrateam/splinter)
 
